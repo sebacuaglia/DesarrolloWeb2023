@@ -10,9 +10,9 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.EspacioFisico;
 public interface RepositorioEspacioFisico extends PagingAndSortingRepository<EspacioFisico, Integer>, CrudRepository<EspacioFisico, Integer>{
 
 	Iterable<EspacioFisico> findAllByNombre(String nombre);
-	Iterable<EspacioFisico> findAllByNombreignoreCase(String nombre);
-	Iterable<EspacioFisico> findAllByNombreignoreCaseContains(String nombre);
-	Iterable<EspacioFisico> findAllByNombreignoreCaseContainsAndCapacidad(String nombre, Integer capacidad);
+	Iterable<EspacioFisico> findAllByNombreIgnoreCase(String nombre);
+	Iterable<EspacioFisico> findAllByNombreIgnoreCaseContains(String nombre);
+	Iterable<EspacioFisico> findAllByNombreIgnoreCaseContainsAndCapacidad(String nombre, Integer capacidad);
 	Iterable<EspacioFisico> findAllByCapacidad(Integer capacidad);
 	
 }

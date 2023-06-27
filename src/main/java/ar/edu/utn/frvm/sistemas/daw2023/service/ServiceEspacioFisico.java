@@ -57,7 +57,7 @@ public class ServiceEspacioFisico  implements IEspacioFisico{
 
 	@Override
 	public Iterable<EspacioFisico> getByNombreAndCapacidad(String nombre, Integer capacidad) {
-		return repositorioEspacioFisico.findAllByNombreignoreCaseContainsAndCapacidad(nombre, capacidad);
+		return repositorioEspacioFisico.findAllByNombreIgnoreCaseContainsAndCapacidad(nombre, capacidad);
 	}
 
 	
