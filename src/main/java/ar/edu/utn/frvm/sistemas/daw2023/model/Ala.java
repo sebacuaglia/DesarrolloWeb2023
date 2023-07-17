@@ -1,7 +1,10 @@
 package ar.edu.utn.frvm.sistemas.daw2023.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
+import com.sun.istack.NotNull;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -13,9 +16,9 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
-public class EstadoEspacioFisico extends ObjetoDB {
+public class Ala extends ObjetoDB {
 
 	@NonNull
 	private String nombre;
-	private String descripcion;
+
 }

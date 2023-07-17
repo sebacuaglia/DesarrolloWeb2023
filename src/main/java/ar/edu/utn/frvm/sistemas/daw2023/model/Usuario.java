@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -16,19 +15,20 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
-public class EspacioFisico extends ObjetoDB {
+public class Usuario extends ObjetoDB {
 
 	@NonNull
 	private String nombre;
-	
-	private Integer capacidadMaxima;
-	
-	@ManyToOne
-	private Ala ala;
+	@NonNull
+	private String apellido;
+	@NonNull
+	private String legajo;
+	@NonNull
+	private String dni;
+	private String email;
+	private String telefono;
 	
 	@ManyToMany
-	private List<Recurso> recursos;
-	
-	@ManyToOne
-	private Estado estado;
+	private Rol rol;
+
 }

@@ -1,10 +1,7 @@
 package ar.edu.utn.frvm.sistemas.daw2023.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.Id;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -16,19 +13,9 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
-public class EspacioFisico extends ObjetoDB {
+public class Estado extends ObjetoDB {
 
 	@NonNull
 	private String nombre;
-	
-	private Integer capacidadMaxima;
-	
-	@ManyToOne
-	private Ala ala;
-	
-	@ManyToMany
-	private List<Recurso> recursos;
-	
-	@ManyToOne
-	private Estado estado;
+	private String descripcion;
 }
