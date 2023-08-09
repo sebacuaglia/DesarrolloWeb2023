@@ -27,7 +27,7 @@ public class Reserva extends ObjetoDB {
 	private Date fechaAltaReserva;
 	
 	private String motivoReserva;
-	private String motivoRechazo;
+	
 	@NotNull
 	private Integer capacidadRequerida;
 	
