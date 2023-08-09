@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Usuario extends ObjetoDB {
 	private String email;
 	private String telefono;
 	
-	@ManyToMany
+	@ManyToOne
 	private Rol rol;
 
 }

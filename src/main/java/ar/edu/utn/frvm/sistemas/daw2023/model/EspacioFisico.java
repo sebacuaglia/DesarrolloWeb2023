@@ -21,7 +21,7 @@ public class EspacioFisico extends ObjetoDB {
 	@NonNull
 	private String nombre;
 	
-	private Integer capacidadMaxima;
+	private Integer capacidad;
 	
 	@ManyToOne
 	private Ala ala;

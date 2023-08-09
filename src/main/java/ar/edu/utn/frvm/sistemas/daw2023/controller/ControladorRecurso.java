@@ -13,7 +13,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.Recurso;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IServicioRecurso;
 
 @RestController
-@RequestMapping("/recursos")
+@RequestMapping("/Recursos")
 public class ControladorRecurso {
 
 	private final IServicioRecurso servicio;

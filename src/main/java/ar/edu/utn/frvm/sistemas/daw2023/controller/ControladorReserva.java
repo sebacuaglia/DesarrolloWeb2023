@@ -5,13 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import ar.edu.utn.frvm.sistemas.daw2023.model.EspacioFisico;
 import ar.edu.utn.frvm.sistemas.daw2023.model.Reserva;
 import ar.edu.utn.frvm.sistemas.daw2023.model.Usuario;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IReserva;
 
+@RestController
+@RequestMapping("/Reserva")
 public class ControladorReserva {
 
 	private final IReserva servicio;

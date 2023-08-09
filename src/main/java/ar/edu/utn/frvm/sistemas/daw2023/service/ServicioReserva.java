@@ -3,12 +3,15 @@ package ar.edu.utn.frvm.sistemas.daw2023.service;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.springframework.stereotype.Service;
+
 import ar.edu.utn.frvm.sistemas.daw2023.model.EspacioFisico;
 import ar.edu.utn.frvm.sistemas.daw2023.model.Reserva;
 import ar.edu.utn.frvm.sistemas.daw2023.model.Usuario;
 import ar.edu.utn.frvm.sistemas.daw2023.persistencia.RepositorioReserva;
 
-public class ServicioReserva implements IReserva{
+@Service
+public class ServicioReserva implements IReserva {
 
 	private final RepositorioReserva repositorioReserva;
 	
