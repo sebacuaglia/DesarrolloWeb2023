@@ -2,6 +2,7 @@ package ar.edu.utn.frvm.sistemas.daw2023.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.Recurso;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IServicioRecurso;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/Recursos")
 public class ControladorRecurso {
 
@@ -29,7 +31,7 @@ public class ControladorRecurso {
 		return servicio.get(id);
 	}
 	
-	@GetMapping("/rec")
+	@GetMapping("/searchAll")
 	public Iterable<Recurso> getTodos() {
 		return servicio.getTodos();
 	}
