@@ -36,8 +36,8 @@ public class ServiceEspacioFisico  implements IEspacioFisico{
 	}
 
 	@Override
-	public EspacioFisico actualizar(Integer id) {
-		return repositorioEspacioFisico.save(null);
+	public EspacioFisico actualizar(EspacioFisico r) {
+		return repositorioEspacioFisico.save(r);
 	}
 
 	@Override

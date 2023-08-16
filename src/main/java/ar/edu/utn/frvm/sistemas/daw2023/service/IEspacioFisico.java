@@ -14,7 +14,7 @@ public interface IEspacioFisico {
 	
 	public EspacioFisico guardar(EspacioFisico r);
 	
-	public EspacioFisico actualizar(Integer id);
+	public EspacioFisico actualizar(EspacioFisico id);
 	
 	public void eliminar(Integer id);
 	
@@ -23,4 +23,5 @@ public interface IEspacioFisico {
 	public Iterable<EspacioFisico> getByCapacidad(Integer capacidad);
 	
 	public Iterable<EspacioFisico> getByNombreAndCapacidad(String nombre, Integer capacidad);
+
 }
