@@ -30,17 +30,21 @@ public class ServicioReserva implements IReserva {
 		return repositorioReserva.findAll();
 	}
 
-	@Override
-	public Reserva guardar(Reserva u) {
-		
-		ArrayList<Reserva> reservasEncontradas = getPorEspacioYFechas(u.getEspacioFisico(),u.getFechaReserva(),u.getFechaFinReserva());
-		if (reservasEncontradas.size()>0) {
-			new Exception("YA EXISTE UNA RESERVA PARA ESA FECHA");
-		}
-		u.setFechaAltaReserva(new Date(System.currentTimeMillis()));
-		
-		return repositorioReserva.save(u);
-	}
+@Override
+public Reserva guardar(Reserva u) {
+    ArrayList<Reserva> reservasEncontradas = getPorEspacioYFechas(u.getEspacioFisico(), u.getFechaReserva(), u.getFechaFinReserva());
+    if (!reservasEncontradas.isEmpty()) {
+        throw new IllegalArgumentException("YA EXISTE UNA RESERVA PARA ESA FECHA");
+    }
+
+    u.setFechaAltaReserva(u.getFechaAltaReserva());
+    u.setFechaReserva(u.getFechaReserva()); // Establecer la fecha de reserva proporcionada desde el frontend
+    u.setFechaFinReserva(u.getFechaFinReserva()); // Establecer la fecha fin de reserva proporcionada desde el frontend
+
+    return repositorioReserva.save(u);
+}
+
+
 
 	@Override
 	public void delete(Integer id) {
