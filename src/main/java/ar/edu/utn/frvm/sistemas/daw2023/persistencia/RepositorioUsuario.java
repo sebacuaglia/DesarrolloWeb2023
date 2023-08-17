@@ -11,5 +11,6 @@ public interface RepositorioUsuario extends PagingAndSortingRepository<Usuario, 
 
 	Iterable<Usuario> findByLegajoIgnoreCase(String legajo);
 	Iterable<Usuario> findByDniIgnoreCase(String dni);
+
 	
 }

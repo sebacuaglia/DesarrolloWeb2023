@@ -14,10 +14,11 @@ import ar.edu.utn.frvm.sistemas.daw2023.persistencia.RepositorioReserva;
 public class ServicioReserva implements IReserva {
 
 	private final RepositorioReserva repositorioReserva;
-	
+
 	
 	public ServicioReserva(RepositorioReserva repositorioReserva) {
 		this.repositorioReserva = repositorioReserva;
+	
 	}
 
 	@Override
@@ -30,8 +31,8 @@ public class ServicioReserva implements IReserva {
 		return repositorioReserva.findAll();
 	}
 
-@Override
-public Reserva guardar(Reserva u) {
+	@Override
+	public Reserva guardar(Reserva u) {
     ArrayList<Reserva> reservasEncontradas = getPorEspacioYFechas(u.getEspacioFisico(), u.getFechaReserva(), u.getFechaFinReserva());
     if (!reservasEncontradas.isEmpty()) {
         throw new IllegalArgumentException("YA EXISTE UNA RESERVA PARA ESA FECHA");
@@ -42,7 +43,32 @@ public Reserva guardar(Reserva u) {
     u.setFechaFinReserva(u.getFechaFinReserva()); // Establecer la fecha fin de reserva proporcionada desde el frontend
 
     return repositorioReserva.save(u);
-}
+	}
+
+	@Override
+	public Reserva actualizar(Reserva u) {
+		ArrayList<Reserva> reservasEncontradas = getPorEspacioYFechas(u.getEspacioFisico(), u.getFechaReserva(), u.getFechaFinReserva());
+
+		if (!reservasEncontradas.isEmpty()) {
+			for (Reserva reservaEncontrada : reservasEncontradas) {
+				if (!reservaEncontrada.getId().equals(u.getId())) {
+					throw new IllegalArgumentException("YA EXISTE UNA RESERVA PARA ESA FECHA");
+				}
+			}
+		}
+
+		Reserva reservaExistente = repositorioReserva.findById(u.getId()).orElse(null);
+		if (reservaExistente != null) {
+			if (u.getFechaReserva().equals(reservaExistente.getFechaReserva())) {
+				u.setFechaReserva(reservaExistente.getFechaReserva());
+			}
+			if (u.getFechaFinReserva().equals(reservaExistente.getFechaFinReserva())) {
+				u.setFechaFinReserva(reservaExistente.getFechaFinReserva());
+			}
+		}
+
+		return repositorioReserva.save(u);
+	}
 
 
 

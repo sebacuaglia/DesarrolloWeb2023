@@ -13,6 +13,8 @@ public interface IReserva {
 	Iterable<Reserva> getTodos();
 	
 	Reserva guardar(Reserva u);
+
+	Reserva actualizar(Reserva u);
 	
 	void delete(Integer id);
 	
@@ -20,6 +22,11 @@ public interface IReserva {
 	
 	Iterable<Reserva> getPorEspacio(EspacioFisico espacio);
 	
+
 	Iterable<Reserva> getPorEspacioYFechas(EspacioFisico espacio, Date inicio, Date fin);
+
+
 	
+
+
 }

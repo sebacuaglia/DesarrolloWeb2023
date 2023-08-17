@@ -32,28 +32,32 @@ public class ControladorReserva {
 		return this.servicio.guardar(r);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/search", params = {"reservante"} )
 	public Iterable<Reserva> getPorReservante(@RequestParam(name = "reservante", required = true) Usuario reservante){
 		return servicio.getPorReservante(reservante);
-		
+
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/search", params = {"espacio"} )
 	public Iterable<Reserva> getPorDni(@RequestParam(name = "espacio", required = true) EspacioFisico espacio){
 		return servicio.getPorEspacio(espacio);
-		
+
 	}
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/searchAll")
 	public Iterable<Reserva> getTodos() {
 		return servicio.getTodos();
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/actualizar")
-	public Reserva actualizar(@RequestBody Reserva r) {
-		return this.servicio.guardar(r);
+	public Reserva actualizar(@RequestBody Reserva u) {
+		return this.servicio.actualizar(u);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping(value = "/delete", params = {"id"} )
 	public void delete(@RequestParam(name = "id", required = true) Integer id) {
 		this.servicio.delete(id);

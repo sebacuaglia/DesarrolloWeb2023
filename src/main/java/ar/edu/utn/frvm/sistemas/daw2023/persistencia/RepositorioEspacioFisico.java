@@ -14,5 +14,6 @@ public interface RepositorioEspacioFisico extends PagingAndSortingRepository<Esp
 	Iterable<EspacioFisico> findAllByNombreIgnoreCaseContains(String nombre);
 	Iterable<EspacioFisico> findAllByNombreIgnoreCaseContainsAndCapacidad(String nombre, Integer capacidad);
 	Iterable<EspacioFisico> findAllByCapacidad(Integer capacidad);
+
 	
 }
