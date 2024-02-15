@@ -12,7 +12,7 @@
 	<groupId>ar.edu.utn.frvm.sistemas</groupId>
 	<artifactId>daw2023</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>DesarrolloWeb2023</name>
 	<description>Primer proyecto de DAW 2023</description>
 	<properties>
@@ -70,6 +70,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>DesarrolloWeb2023</finalName>
 	</build>
 
 </project>

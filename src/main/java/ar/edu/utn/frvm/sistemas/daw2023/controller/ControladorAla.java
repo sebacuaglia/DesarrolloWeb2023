@@ -11,7 +11,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.service.IAla;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IUsuario;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/Ala")
 public class ControladorAla {
 

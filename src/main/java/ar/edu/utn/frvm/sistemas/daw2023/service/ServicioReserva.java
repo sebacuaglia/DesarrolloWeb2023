@@ -78,8 +78,8 @@ public class ServicioReserva implements IReserva {
 	}
 
 	@Override
-	public Iterable<Reserva> getPorReservante(Usuario reservante) {
-		return repositorioReserva.findByReservante(reservante);
+	public Iterable<Reserva> getPorReservante(String reservante) {
+		return repositorioReserva.findByReservanteNombreContainingIgnoreCaseOrReservanteApellidoContainingIgnoreCase(reservante,reservante);
 	}
 
 	@Override
@@ -87,6 +87,11 @@ public class ServicioReserva implements IReserva {
 		return repositorioReserva.findByEspacioFisico(espacio);
 	}
 
+	@Override
+	public Iterable<Reserva> getPorEspacio(String espacio) {
+		return repositorioReserva.findByEspacioFisicoNombreContainingIgnoreCase(espacio);
+	}
+	
 	@Override
 	public ArrayList<Reserva> getPorEspacioYFechas(EspacioFisico espacio, Date inicio, Date fin) {
 		ArrayList<Reserva> reservasfiltradas = new ArrayList<Reserva>();

@@ -12,7 +12,8 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.Usuario;
 public interface RepositorioReserva extends PagingAndSortingRepository<Reserva, Integer>, CrudRepository<Reserva, Integer> {
 
 	public Iterable<Reserva> findByEspacioFisico(EspacioFisico espacio);
-	public Iterable<Reserva> findByReservante(Usuario reservante);
+	public Iterable<Reserva> findByEspacioFisicoNombreContainingIgnoreCase(String espacio);
+	public Iterable<Reserva> findByReservanteNombreContainingIgnoreCaseOrReservanteApellidoContainingIgnoreCase(String nombre, String apellido);
 
 	
 }

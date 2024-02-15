@@ -14,7 +14,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.Usuario;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IUsuario;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/Usuario")
 public class ControladorUsuario {
 

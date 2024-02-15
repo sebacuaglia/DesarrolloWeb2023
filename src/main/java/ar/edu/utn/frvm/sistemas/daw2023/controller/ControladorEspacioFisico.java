@@ -15,7 +15,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.EspacioFisico;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IEspacioFisico;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/EspacioFisico")
 public class ControladorEspacioFisico {
 

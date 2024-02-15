@@ -16,7 +16,7 @@ import ar.edu.utn.frvm.sistemas.daw2023.model.Usuario;
 import ar.edu.utn.frvm.sistemas.daw2023.service.IReserva;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/Reserva")
 public class ControladorReserva {
 
@@ -34,14 +34,14 @@ public class ControladorReserva {
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/search", params = {"reservante"} )
-	public Iterable<Reserva> getPorReservante(@RequestParam(name = "reservante", required = true) Usuario reservante){
+	public Iterable<Reserva> getPorReservante(@RequestParam(name = "reservante", required = true) String reservante){
 		return servicio.getPorReservante(reservante);
 
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping(value = "/search", params = {"espacio"} )
-	public Iterable<Reserva> getPorDni(@RequestParam(name = "espacio", required = true) EspacioFisico espacio){
+	public Iterable<Reserva> getPorDni(@RequestParam(name = "espacio", required = true) String espacio){
 		return servicio.getPorEspacio(espacio);
 
 	}

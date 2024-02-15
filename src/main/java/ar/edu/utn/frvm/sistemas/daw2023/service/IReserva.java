@@ -18,11 +18,11 @@ public interface IReserva {
 	
 	void delete(Integer id);
 	
-	Iterable<Reserva> getPorReservante(Usuario reservante);
+	Iterable<Reserva> getPorReservante(String reservante);
 	
 	Iterable<Reserva> getPorEspacio(EspacioFisico espacio);
+	Iterable<Reserva> getPorEspacio(String espacio);
 	
-
 	Iterable<Reserva> getPorEspacioYFechas(EspacioFisico espacio, Date inicio, Date fin);
 
 
